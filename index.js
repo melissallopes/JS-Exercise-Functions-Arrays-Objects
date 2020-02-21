@@ -145,7 +145,17 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  const indexer = inventory.find((item, index) => {
+    return item;
+  });
+
+  // for (var item of inventory) {
+  //   if (item === index) return item;
+  // }
+
+  // return `This is a ${item.car_make} ${item.car_model}`;
+
+  return `This is a ${indexer.car_make} ${indexer.car_model}`;
 }
 
 /**
@@ -159,8 +169,14 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
  */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+
+// import inventory from "./data/inventory.js";
+function getLastCarInfo(inventory) {
+  const last = inventory.find((item, index) => {
+    return item === inventory[inventory.length - 1];
+  });
+
+  return `This is a ${last.car_make}${last.car_model}`;
 }
 
 /**
@@ -175,8 +191,12 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
  */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory, id) {
+  const findId = inventory.find((item, index) => {
+    return item.id === id;
+  });
+
+  return `This is a ${findId.car_make} ${findId.car_model}`;
 }
 
 /**
@@ -187,9 +207,7 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
  */
-function sortCarInventory(/* code here */) {
-  /* code here */
-}
+function sortCarInventory() {}
 
 /**
  * ### Challenge `getModelYears`
@@ -253,9 +271,15 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
  */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => {
+  a + b;
+};
+const addFive = num => {
+  num + 5;
+};
+const argTimesTwo = num => {
+  num * 2;
+};
 
 /**
  * ### Challenge `carMaker`
